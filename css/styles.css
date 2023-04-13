@@ -1,0 +1,81 @@
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2);
+}
+
+.titulos {
+  color: rgb(83, 48, 20);
+}
+
+.bg-marron {
+  background-color: rgb(46, 24, 6);
+}
+
+.btn-marron {
+  background-color: rgb(189, 112, 47);
+  color: white;
+  border: 2px solid rgb(189, 112, 47); 
+  border-radius: 30px;
+}
+
+/* Atencion a este hover, fijate en el "live server" como se ve el efecto */
+
+.btn-marron:hover {
+  background-color: #ffffff;
+  border: 2px solid rgb(189, 112, 47);
+  color: rgb(189, 112, 47);
+}
+
+/* ================================= Header =================================*/
+
+.h1 {
+  display: none;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-link {
+  color: rgb(81, 10, 0);
+  font-size: 1.15rem;
+}
+
+.nav-link:hover {
+  color: rgb(246, 166, 117);
+}
+
+.dropdown-item {
+  color: rgb(81, 10, 0);
+  font-size: 1.15rem;
+}
+
+.navbar-nav .nav-link.show {
+  color: rgb(246, 166, 117);
+}
+
+.dropdown-item:hover {
+  color: rgb(246, 166, 117);
+}
+
+/* ================================= Portada =================================*/
+
+.portada__contenedor-imagen-muffin {
+  padding: 0;
+}
+
+/* Acabas de aprender algo monumental. El box shadow estaba superponiendose en tu footer. Lo que hiciste fue ponerle a la imagen una position relative asi se habilita el eje Z. Una vez hecho esto, modificaste el z-index a -1 para que la imagen se solapara por debajo del footer y ualaa! */
+
+.img-muffin {
+  height: 70vh;
+  object-fit: cover;
+  box-shadow: 0px 0px 15px #000000;
+  z-index: -1;
+  position: relative;
+}
+
+/* ================================= Footer ================================= */
+
+footer {
+  color: #ffffff;
+}

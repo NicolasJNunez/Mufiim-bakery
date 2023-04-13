@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  
+  <title>Ejercicio bootstrap 2</title>
+</head>
+
+<body>
+
+<!-- En este header han sido modificadas muchas opciones que venian por defecto. El uso de las herramientas del desarrollador han facilitado divisar los elementos que queriamos modificiar -->
+
+    <header class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <h1 class="h1">MufiiM</h1>
+        <a class="navbar-brand" href="#"><img src="./img/logo-bakery-2.png" alt="logo" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Delicias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Galeria
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Local</a></li>
+                <li><a class="dropdown-item" href="#">Productos</a></li>
+                <li><a class="dropdown-item" href="#">Staff</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <main>
+
+    <!--------------------- Sección Portada --------------------->
+
+    <section>
+
+      <!-- Buena implementación de flex, aplicando el infijo lg para que solo se aplique en resoluciones de pantallas amplias. Tambien, hay que destacar el hecho de tener en cuenta que los hijos directos del div que aplica flex son la imagen y luego el texto, gracias a eso se ubican uno al lado del otro. Por ultimo, buena implementacion de la clase align items para que se centren en el eje secundario cuando nos encontramos en pantallas amplias. En definitiva, un contenedor es lo suficientemente grande hasta que aparece otro para manejarlo a su antojo, un mundo sobre otro mundo-->
+
+<div class="d-lg-flex align-items-lg-center">
+
+  <!-- Aqui esta el * que es usado en una observacion mas abajo. En el div de arriba es donde podria haber usado flex-lg-row-reverse para ubicar el contenedor del texto a la izquierda -->
+
+        <div class="container-fluid">
+          <div class="row">
+          
+            <div class="col-12 portada__contenedor-imagen-muffin">
+              <!-- El w-100 de la img es en base al contenedor padre, tener en cuenta eso -->
+              <img src="./img/muffin.jpg" alt="imagen-muffin" class="img-muffin w-100">
+              <!-- Si usaramos por ejemplo w-25 en una imagen SIN contenedor padre, el tamaño se modificaria en base al tamaño original de dicha imagen -->
+  
+              <!-- Si le queremos aplicar un ancho determinado a un contenedor (que no ocupe el 100%), es preferible usar la unidad de medida pixels y que el alto vaya variando con una unidad de medida relativa -->
+  
+            </div>
+          </div>
+        </div>
+  
+        <!-- a continuacion, se uso la clase order-lg-first para ubicar al texto a la izquierda en resoluciones altas. Tambien se podia usar la clase flex-lg-row-reverse PERO no en el div que viene acontinuacion, sino en el div que contiene los contenedores de la img y texto. Uso el * para que lo ubiques -->
+        
+          <div class="container mt-5 order-lg-first mb-5 mb-lg-0">
+            
+            <div class="row">
+              <div class="col-12 portada__contenedor-texto">
+                <!-- En este h2 se utilizó una clase "display-1" de bootstrap que sirve para aumentarle el tamaño a la letra y tambien "fw-bold" para aplicar negrita -->
+                <h2 class="display-6 fw-bold text-center titulos px-lg-5 text-lg-start">Dulces momentos, dulces recuerdos...</h2>
+  
+                <!-- Cuando queremos aplicar margins en bootstrap, podemos usar my para el eje Y, viceversa con x y asi aplicar un margen a ambos lados. Se le puede poner infijos para aplicarlo a un breakpoint determinado -->
+              
+                <p class="text-center mt-4 px-3 px-lg-5 text-lg-start">En nuestra confitería, ofrecemos una experiencia única. Desde nuestros postres clásicos hasta nuestras creaciones más innovadoras, cada bocado está lleno de sabor y calidad. Utilizamos solo los mejores ingredientes para asegurarnos de que cada visita a nuestra confitería sea una experiencia memorable. ¡Veni a probar nuestros dulces y dejate tentar!</p>
+              <!-- Presta atención aca como hice el boton usando bootstrap, fijate que use dos clases, la btn es la que le da los estilos de bootrstrap y la btn + algo es la clase que creamos nosotros para modificarla con nuestro css. Tambien la clase btn-lg aumenta el tamaño del boton -->
+  
+                <div class="d-flex justify-content-center mt-4 justify-content-lg-start px-lg-5">
+                  <!-- Atención, este div que encierra el botón fue generado porque para aplicar flexbox siempre se hace desde un contenedor padre a un contenedor hijo  -->
+                  <a href="#" class="btn btn-lg btn-marron">Ver algo rico</a>
+                </div>
+  
+              </div>
+  
+            </div>
+  
+          </div>
+</div>
+
+    </section>
+
+  </main>
+
+  <footer class="container-fluid bg-marron">
+
+    <div class="container">
+
+      <!-- Fila superior footer -->
+
+      <!-- ⇩ aca abajo se uso la clase justify-content-lg-between sin usar la clase d-flex. Esto se debe a que el div con clase row ya tiene flexbox integrado, atento con eso-->
+
+      <div class="row justify-content-lg-between align align-items-lg-center py-3 border-bottom">
+
+        <!-- informacion adicional -->
+
+        <div class="col-12 col-lg-2 d-flex flex-column align-items-center p-3 gap-2">
+
+          <!-- ⇧ Fijate el div donde se esta poniendo la propiedad d flex flex-column -->
+
+          <img src="./img/logo-bakery-2.png" alt="logo" class="logo">
+          <p>MufiiM © 2023. Todos los derechos reservados</p>
+          <span>mufiim@gmail.com</span>
+        </div>
+
+        <!-- Redes sociales -->
+
+        <div class="col-12 col-lg-3 p-3 d-flex flex-column gap-2">
+          <h3 class="text-center">Redes Sociales</h3>
+          <div class="fs-3 d-flex justify-content-around">
+            <!--  ⇩ fijate como llamamos a los iconos LUEGO de haber linkeado el cdn del apartado de icono de bootstrap, ej bi bi-instagram. Acordate tambien que para cambiarle el tamaño a los iconos usamos el tamaño de fuente (font size) ⇧ -->
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+
+        </div>
+
+        <!-- Newsletter  -->
+
+        <div class="col-12 col-lg-4 d-flex flex-column gap-2 p-2">
+
+          <h3 class="text-center">Suscribite a nuestro Newsletter</h3>
+          <form action="" class="d-flex gap-3">
+            <!-- Fijate aca que la clase "form-control" es de bootstrap y viene con su diseño predefinido -->
+            <input type="text" placeholder="Email@ejemplo.com" class="form-control">
+
+            <!-- en este input de tipo submit que viene abajo, el atributo value se lo tenemos que dar nosotros. Tambien acordarse de ponerle tanto la clase btn de bootstrap con su diseño predefinido Y la clase btn-"color" para darle los estilos que nosotros queramos mediante nuestro archivo de css -->
+
+            <input type="submit" value="Enviar" class="btn btn-marron">
+          </form>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <!-- ⇩ Aca la etiqueta p tenia un margin por defecto y generaba una franja blanca abajo del footer, se la sacaste usando la clase m-0  -->
+        <p class="text-center m-0 p-2">MufiiM | Todos los derechos reservados</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
